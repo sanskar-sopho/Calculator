@@ -16,7 +16,7 @@ void sum()
   printf("\nEnter the elements\n");
   for(i=0;i<n;i++)
     {
-      scanf("%f",A+i);
+      scanf("%f",A+i);  
       sum+=*(A+i);
     }
   printf("\nSum = %f\n",sum);
@@ -131,8 +131,7 @@ void arcTan()
 
 int main()
 {
-  int n;
-  char ch='y';
+  int n,c;
   show_menu();
   scanf("%d",&n);
   switch(n)
@@ -165,11 +164,10 @@ int main()
       break;
    default: printf("\nEnter correct choice\n");
     }
-  printf("\nWant to continue(Y/N)");
-
   fflush(stdin);
-  scanf("%c",&ch);
-  if(ch=='y' || ch=='Y')
+  printf("\nWant to continue(1/0)\n");
+  scanf("%d",&c);
+  if(c==1)
     main();
   return 0;
 }
