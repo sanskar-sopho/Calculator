@@ -4,7 +4,7 @@
 void show_menu()
 {
   printf("\t**** C A L C U L A T O R ****\n");
-  printf("1. Sum\n2. Difference\n3. Product\n4. Divide\n5. Power\n6. Square Root\n7. Logarithm\n8. Sine\n9. Cosine\n10. Tangent\n11. ArcSine\n12. Arccosine\n13. ArcTangent\nEnter your choice\n");
+  printf("1. Sum\n2. Difference\n3. Product\n4. Divide\n5. Power\n6. Square Root\n7. Logarithm\n8. Sine\n9. Cosine\n10. Tangent\n11. ArcSine\n12. Arccosine\n13. ArcTangent\n14. Quadratic Equation\nEnter your choice\n");
 }
 void sum()
 {
@@ -127,7 +127,19 @@ void arcTan()
   scanf("%f",&a);
   printf("\nArctan(%f) = %f\n",a,atan(a)*180/3.14);
 }
-
+void quadratic()
+{
+  printf("\nEnter coefficients\n");
+  float a,b,c;
+  scanf("%f%f%f",&a,&b,&c);
+  if(b*b-4*a*c<0)
+    {
+      printf("\nImaginary roots\n");
+      return;
+    }
+  printf("\nRoots are %f and %f\n",(-1*b+sqrt(b*b-4*a*c))/(2*a),(-1*b-sqrt(b*b-4*a*c))/(2*a));
+  return;
+}
 
 int main()
 {
@@ -161,6 +173,8 @@ int main()
     case 12 : arccosine();
       break;
     case 13 : arcTan();
+      break;
+    case 14 : quadratic();
       break;
    default: printf("\nEnter correct choice\n");
     }
